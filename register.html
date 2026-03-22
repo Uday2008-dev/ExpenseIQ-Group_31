@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — ExpenseIQ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <!-- Brand Panel -->
+  <div class="auth-brand">
+    <div class="grid-lines"></div>
+
+    <div class="brand-badge">
+      <div class="brand-icon">💰</div>
+      <span class="brand-name">ExpenseIQ</span>
+    </div>
+
+    <h1 class="brand-tagline">
+      Start your<br>
+      financial <span>journey.</span>
+    </h1>
+
+    <p class="brand-desc">
+      Join thousands who use ExpenseIQ to take control of their money. AI-powered insights, smart budgeting, and real-time anomaly detection.
+    </p>
+
+    <div class="brand-stats">
+      <div>
+        <div class="bstat-val">Free</div>
+        <div class="bstat-label">Forever plan</div>
+      </div>
+      <div>
+        <div class="bstat-val">&lt;30s</div>
+        <div class="bstat-label">Setup time</div>
+      </div>
+      <div>
+        <div class="bstat-val">AI</div>
+        <div class="bstat-label">Powered insights</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Panel -->
+  <div class="auth-form-panel">
+    <div class="auth-card page-animate">
+      <div class="auth-card-header">
+        <h2>Create account</h2>
+        <p>Get started — it's completely free</p>
+      </div>
+
+      <div id="register-alert" class="alert hidden"></div>
+
+      <form id="register-form">
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name</label>
+          <input
+            class="form-input"
+            type="text"
+            id="name"
+            placeholder="Arjun Sharma"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            placeholder="arjun@example.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              placeholder="Min. 6 characters"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="confirm-password">Confirm</label>
+            <input
+              class="form-input"
+              type="password"
+              id="confirm-password"
+              placeholder="Re-enter password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          id="register-btn"
+          class="btn btn-primary btn-lg btn-block"
+          style="margin-top:8px"
+        >
+          Create Account →
+        </button>
+      </form>
+
+      <div class="divider"></div>
+
+      <div class="auth-link-row">
+        Already have an account? <a href="login.html">Sign in</a>
+      </div>
+
+      <p style="text-align:center;margin-top:16px;font-size:11px;color:var(--text-muted);line-height:1.6;">
+        By creating an account, you agree to our Terms of Service and Privacy Policy.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

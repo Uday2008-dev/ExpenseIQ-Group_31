@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Expense — ExpenseIQ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<button class="mobile-toggle" id="mobile-toggle">☰</button>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">💰</div>
+      <span class="logo-text">ExpenseIQ</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <span class="nav-section-label">Main</span>
+
+      <a href="index.html" class="nav-link">
+        <span class="nav-icon">📊</span>
+        Dashboard
+      </a>
+
+      <a href="add-expense.html" class="nav-link">
+        <span class="nav-icon">➕</span>
+        Add Expense
+      </a>
+
+      <a href="budget.html" class="nav-link">
+        <span class="nav-icon">🎯</span>
+        Budget
+      </a>
+
+      <span class="nav-section-label" style="margin-top:12px">Account</span>
+
+      <a href="login.html" class="nav-link" id="logout-nav">
+        <span class="nav-icon">🚪</span>
+        Logout
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="user-avatar" id="user-avatar">U</div>
+        <div class="user-info">
+          <div class="user-name" id="user-name">User</div>
+          <div class="user-role">Personal Account</div>
+        </div>
+        <button class="logout-btn" id="logout-btn" title="Logout">⇥</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content page-animate">
+
+    <div class="topbar">
+      <div class="topbar-left">
+        <h1>Add Expense</h1>
+        <p>Log a new transaction to your tracker</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+
+      <!-- Form Card -->
+      <div class="card">
+        <div class="card-header" style="margin-bottom:24px">
+          <div class="section-title">New Transaction</div>
+        </div>
+
+        <div id="expense-alert" class="alert hidden"></div>
+
+        <form id="expense-form">
+
+          <!-- Amount -->
+          <div class="form-group">
+            <label class="form-label" for="amount">Amount *</label>
+            <div class="input-wrapper">
+              <span class="input-prefix">₹</span>
+              <input
+                class="form-input"
+                type="number"
+                id="amount"
+                placeholder="0.00"
+                min="0.01"
+                step="0.01"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label" for="description">Description *</label>
+            <input
+              class="form-input"
+              type="text"
+              id="description"
+              placeholder="e.g. Grocery at D-Mart, Uber to Airport…"
+              autocomplete="off"
+              required
+            />
+            <div class="category-suggest" id="category-suggest">
+              <!-- Auto-filled here -->
+            </div>
+            <div class="form-hint">Start typing — AI will auto-detect the category ✨</div>
+          </div>
+
+          <!-- Category & Date -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="category">Category</label>
+              <select class="form-select" id="category">
+                <option value="food">🍜 Food</option>
+                <option value="transport">🚌 Transport</option>
+                <option value="shopping">🛍️ Shopping</option>
+                <option value="utilities">⚡ Utilities</option>
+                <option value="health">💊 Health</option>
+                <option value="entertainment">🎬 Entertainment</option>
+                <option value="education">📚 Education</option>
+                <option value="other">📌 Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="date">Date *</label>
+              <input
+                class="form-input"
+                type="date"
+                id="date"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Notes (optional) -->
+          <div class="form-group">
+            <label class="form-label" for="notes">Notes <span style="color:var(--text-muted)">(optional)</span></label>
+            <input
+              class="form-input"
+              type="text"
+              id="notes"
+              placeholder="Any additional details…"
+            />
+          </div>
+
+          <div style="display:flex;gap:12px;margin-top:8px">
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" style="flex:1">
+              Add Expense
+            </button>
+            <a href="index.html" class="btn btn-secondary btn-lg">Cancel</a>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Tips / Info Panel -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+
+        <div class="card">
+          <div style="font-size:18px;margin-bottom:12px">✨ AI Auto-Categorization</div>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7">
+            As you type the expense description, our AI model automatically predicts and fills the most likely category. Just describe what you spent on and let the AI handle the rest.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size:18px;margin-bottom:12px">⚠ Anomaly Detection</div>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7">
+            When you submit an expense, our system checks if the amount seems unusually high for the category based on your spending history. You'll be warned immediately if something looks off.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:16px">Category Guide</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary)">
+              <span>🍜</span> Food — restaurants, groceries, delivery
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary)">
+              <span>🚌</span> Transport — fuel, cabs, public transit
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary)">
+              <span>🛍️</span> Shopping — clothes, gadgets, online orders
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary)">
+              <span>⚡</span> Utilities — electricity, water, internet
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary)">
+              <span>💊</span> Health — medicines, doctor visits, gym
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary)">
+              <span>🎬</span> Entertainment — movies, streaming, events
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary)">
+              <span>📚</span> Education — books, courses, tuition
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

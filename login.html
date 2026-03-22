@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — ExpenseIQ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <!-- Brand Panel -->
+  <div class="auth-brand">
+    <div class="grid-lines"></div>
+
+    <div class="brand-badge">
+      <div class="brand-icon">💰</div>
+      <span class="brand-name">ExpenseIQ</span>
+    </div>
+
+    <h1 class="brand-tagline">
+      Track smarter.<br>
+      Spend <span>wiser.</span>
+    </h1>
+
+    <p class="brand-desc">
+      AI-powered expense tracking that gives you real-time insights, smart categorization, and anomaly alerts — all in one elegant dashboard.
+    </p>
+
+    <div class="brand-stats">
+      <div>
+        <div class="bstat-val">98%</div>
+        <div class="bstat-label">Category accuracy</div>
+      </div>
+      <div>
+        <div class="bstat-val">2.4×</div>
+        <div class="bstat-label">Savings rate</div>
+      </div>
+      <div>
+        <div class="bstat-val">24/7</div>
+        <div class="bstat-label">Anomaly alerts</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Panel -->
+  <div class="auth-form-panel">
+    <div class="auth-card page-animate">
+      <div class="auth-card-header">
+        <h2>Welcome back</h2>
+        <p>Sign in to your account to continue</p>
+      </div>
+
+      <div id="login-alert" class="alert hidden"></div>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input
+            class="form-input"
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          id="login-btn"
+          class="btn btn-primary btn-lg btn-block"
+          style="margin-top:8px"
+        >
+          Sign In →
+        </button>
+      </form>
+
+      <div class="divider"></div>
+
+      <div class="auth-link-row">
+        Don't have an account? <a href="register.html">Create one free</a>
+      </div>
+
+      <!-- Demo hint -->
+      <div style="margin-top:20px;background:var(--bg-card-alt);border-radius:var(--radius-sm);padding:12px 16px;border:1px solid var(--border);">
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Demo credentials</p>
+        <p style="font-size:13px;color:var(--text-secondary);font-family:var(--font-mono);">demo@expense.app / demo1234</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget — ExpenseIQ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<button class="mobile-toggle" id="mobile-toggle">☰</button>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">💰</div>
+      <span class="logo-text">ExpenseIQ</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <span class="nav-section-label">Main</span>
+
+      <a href="index.html" class="nav-link">
+        <span class="nav-icon">📊</span>
+        Dashboard
+      </a>
+
+      <a href="add-expense.html" class="nav-link">
+        <span class="nav-icon">➕</span>
+        Add Expense
+      </a>
+
+      <a href="budget.html" class="nav-link">
+        <span class="nav-icon">🎯</span>
+        Budget
+      </a>
+
+      <span class="nav-section-label" style="margin-top:12px">Account</span>
+
+      <a href="login.html" class="nav-link" id="logout-nav">
+        <span class="nav-icon">🚪</span>
+        Logout
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="user-avatar" id="user-avatar">U</div>
+        <div class="user-info">
+          <div class="user-name" id="user-name">User</div>
+          <div class="user-role">Personal Account</div>
+        </div>
+        <button class="logout-btn" id="logout-btn" title="Logout">⇥</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content page-animate">
+
+    <div class="topbar">
+      <div class="topbar-left">
+        <h1>Budget Planner</h1>
+        <p>Set monthly limits and track category-wise usage</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start">
+
+      <!-- Budget Form -->
+      <div class="card">
+        <div class="section-title" style="margin-bottom:4px">Set Your Budget</div>
+        <div class="section-subtitle">Define spending limits per category</div>
+
+        <div id="budget-alert" class="alert hidden"></div>
+
+        <form id="budget-form">
+
+          <!-- Total budget -->
+          <div class="form-group">
+            <label class="form-label" for="total-budget-input">
+              <span style="color:var(--accent)">★</span> Total Monthly Budget
+            </label>
+            <div class="input-wrapper">
+              <span class="input-prefix">₹</span>
+              <input
+                class="form-input"
+                type="number"
+                id="total-budget-input"
+                placeholder="60000"
+                min="0"
+                step="100"
+              />
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:16px;text-transform:uppercase;letter-spacing:0.5px">Category Limits</div>
+
+          <div class="budget-form-grid">
+
+            <div class="form-group">
+              <label class="form-label" for="budget-food">🍜 Food</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-food" placeholder="15000" min="0" step="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget-transport">🚌 Transport</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-transport" placeholder="8000" min="0" step="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget-shopping">🛍️ Shopping</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-shopping" placeholder="10000" min="0" step="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget-utilities">⚡ Utilities</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-utilities" placeholder="5000" min="0" step="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget-health">💊 Health</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-health" placeholder="8000" min="0" step="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget-entertainment">🎬 Entertainment</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-entertainment" placeholder="5000" min="0" step="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget-education">📚 Education</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-education" placeholder="5000" min="0" step="100" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="budget-other">📌 Other</label>
+              <div class="input-wrapper">
+                <span class="input-prefix">₹</span>
+                <input class="form-input" type="number" id="budget-other" placeholder="4000" min="0" step="100" />
+              </div>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:8px">
+            💾 Save Budget
+          </button>
+        </form>
+      </div>
+
+      <!-- Progress & Overview -->
+      <div style="display:flex;flex-direction:column;gap:20px">
+
+        <!-- Total Budget Card -->
+        <div class="card">
+          <div class="card-accent-line accent-gold"></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px">
+            <div>
+              <div class="card-title">Overall Budget Usage</div>
+              <div style="font-size:13px;color:var(--text-secondary);margin-top:4px">
+                Remaining: <span style="color:var(--success);font-weight:600;font-family:var(--font-mono)" id="total-remaining">—</span>
+              </div>
+            </div>
+            <div style="font-size:24px">🎯</div>
+          </div>
+          <div class="progress-track" style="height:12px">
+            <div class="progress-fill fill-safe" id="total-progress" style="width:0%"></div>
+          </div>
+        </div>
+
+        <!-- Category Progress Bars -->
+        <div class="card">
+          <div class="section-title" style="margin-bottom:4px">Category Usage</div>
+          <div class="section-subtitle">Spent vs. budgeted per category</div>
+
+          <div class="progress-list" id="progress-list">
+            <!-- Rendered by JS -->
+            <div class="skeleton" style="height:40px;border-radius:8px;margin-bottom:8px"></div>
+            <div class="skeleton" style="height:40px;border-radius:8px;margin-bottom:8px"></div>
+            <div class="skeleton" style="height:40px;border-radius:8px;margin-bottom:8px"></div>
+            <div class="skeleton" style="height:40px;border-radius:8px"></div>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="card" style="padding:16px 20px">
+          <div style="display:flex;gap:20px;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-secondary)">
+              <div style="width:12px;height:12px;border-radius:3px;background:var(--success)"></div> Safe (&lt;80%)
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-secondary)">
+              <div style="width:12px;height:12px;border-radius:3px;background:var(--warning)"></div> Warning (80–99%)
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-secondary)">
+              <div style="width:12px;height:12px;border-radius:3px;background:var(--danger)"></div> Over budget (100%+)
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
