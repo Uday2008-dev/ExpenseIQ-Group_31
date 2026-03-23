@@ -30,8 +30,10 @@ This project was developed as part of the **Capstone Project** by **Group 31, II
 - **Visualization:** Matplotlib / Plotly
 -   
  **To Run This Application**
-  RUN:
-  python app.py
+ ```bash
+   python app.py
+```
+
 
 **OPEN THE BROWSER**
   http://127.0.0.1:5000/
