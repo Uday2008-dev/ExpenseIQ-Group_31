@@ -10,7 +10,7 @@ This software, **ExpenseIQ – Smart Expense Tracker**, has been developed as pa
 
 - The project is intended for **academic, research, and educational purposes only**.  
 - Redistribution, modification, or reuse of the code is permitted **with proper attribution** to the original authors (Group 31, IIT Patna).  
-- Commercial use of this project or its derivatives is **not permitted** without explicit written consent from the project supervisors and IIT Patna.  
+- Commercial use of this project or its derivatives is **not permitted** without explicit written consent from the project supervisors and team members.  
 
 ---
 
