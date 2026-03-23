@@ -7,7 +7,7 @@
 ## 📌 Overview
 ExpenseIQ is a **smart expense tracking system** designed to help users manage their finances with ease.  
 The project leverages **Python (Flask/Django)** for backend services, **SQLite/PostgreSQL** for data storage, and provides a clean, intuitive interface for recording, categorizing, and analyzing expenses.
-The project also leverages **HTML(Structure)**,**CSS(Design)** & **JavaScript(Lgic in browser)** 
+The project also leverages **HTML(Structure)**,**CSS(Design)** & **JavaScript(Logic in browser)** 
 This project was developed as part of the **Capstone Project** by **Group 31, IIT Patna**.
 
 ---
@@ -28,7 +28,7 @@ This project was developed as part of the **Capstone Project** by **Group 31, II
 - **Frontend:** HTML, CSS, JavaScript (Bootstrap/React optional)  
 - **Authentication:** JWT / Flask-Login  
 - **Visualization:** Matplotlib / Plotly
--   
+ 
  **To Run This Application**
  ```bash
    python app.py
@@ -45,10 +45,11 @@ This project was developed as part of the **Capstone Project** by **Group 31, II
 
 
 👨‍🎓 Contributors – Group 31
-- Harshit Divyanhu – Backend Development
-- Uday Dubey – Frontend & UI Design
-- Uday Dubey & Harshit Divyanshu– Database & Authenticationng & Visualization
+- Harshit Divyanhu – Backend Development & Database
+- Uday Dubey – Frontend & UI Design - - - Harshit Divyanshu & Uday Dubey Authenticationng & Visualization
 - Rohan Dubey – Reporting
+- Shashank Dubey -
+- Sanskar Dubey - 
 
 
-- 
+
