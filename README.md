@@ -46,8 +46,9 @@ This project was developed as part of the **Capstone Project** by **Group 31, II
 
 👨‍🎓 Contributors – Group 31
 - Harshit Divyanhu – Backend Development & Database
-- Uday Dubey – Frontend & UI Design    - Harshit Divyanshu & Uday Dubey Authenticationng & Visualization
-- Rohan Dubey – Reporting
+- Uday Dubey – Frontend & UI Design 
+- Harshit Divyanhu & Uday Dubey - Authenticationng & Visualization 
+- Rohan Dubey – Reporting  And PowerPoint Presentation Works
 - Shashank Dubey -
 - Sanskar Dubey - 
 
