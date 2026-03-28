@@ -49,8 +49,8 @@ This project was developed as part of the **Capstone Project** by **Group 31, II
 - Uday Dubey – Frontend & UI Design 
 - Harshit Divyanhu & Uday Dubey - Authenticationng & Visualization 
 - Rohan Dubey – Reporting  And PowerPoint Presentation Works
-- Shashank Dubey -
-- Sanskar Dubey - 
+- Shashank Dubey -Established connection between backend to frontend with database 
+- Sanskar Dubey - He  contributed as database manager.
 
 
 
